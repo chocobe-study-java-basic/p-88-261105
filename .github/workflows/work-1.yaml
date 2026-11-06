@@ -9,11 +9,6 @@ on:
       - "index.html"
     branches:
       - main
-
-permissions:
-  contents: write
-  packages: write
-
 jobs:
   makeTagAndRelease:
     runs-on: ubuntu-latest
@@ -90,7 +85,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          instance-ids: ${{ secrets.AWS_EC2_ID }}
+          instance-ids: "i-02d26c55c18b4f984"
           working-directory: /
           comment: Deploy
           command: |
